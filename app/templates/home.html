@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<style>	
+.para {
+  background-color: #99bbff	;
+  height: 80px;
+  text-align: center;
+  padding: 70px;
+  border: 5px solid black;
+  font-family: Veranda;
+}
+
+.para2
+{
+	border-bottom: 5px solid black;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-top: 1px solid black;
+  	font-family: Veranda;
+  	height: 470px;
+}
+
+.para3
+{
+	font-family: Veranda;
+	font-size: 1.5emm;
+	padding: 20px; 
+}
+
+.custom
+{
+  font-size: 1.5em;
+  display: block;
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  background-color: #99bbff;
+  z-index: 10;
+}
+
+.result
+{
+	font-size: 1.5em;
+  display: block;
+  width: 200x;
+  height: 50px;
+  border: 1px solid black;
+  background-color: white;
+  z-index: 20;
+}
+</style>	
+
+	<TITLE>Credit Card Fraud Detection</TITLE>
+</HEAD>
+
+<body>
+	<div class = 'para'>
+	<h1>Team 8 presents Credit Card Fraud Detection</h1>
+	</div>
+<div class ='para2'>
+	<div class = 'para3'>
+		<p>Credit card fraud detection relies on the analysis of recorded transactions. Transaction data are mainly composed of several attributes  (e.g. credit card identifier, transaction date, recipient, amount of the transaction etc.).</p>
+		<p> Data is dowloanded from <a href="https://data.world/vlad/credit-card-fraud-detection">this link</a>. As this data is confidential, All features available within data are confidential and hence available after PCA has been performed on them. Also, true transactions within the data are very few hence we have performed over-sampling and under-sampling on the dataset to calculate achieve the best model.</p>
+		
+		<p> We have 2 days data avaliable and we give you options to choose any quarter(6 hour slots) of day 1 or day 2. Next you can select a particular quarter on any/both days and lastly you can select to run the algoritm on the entire time period. </p>
+
+
+	
+	<form action="{{ url_for('result')}}" method="POST">
+	<p>Kindly Select any day and any period from the below drop downs.</p>
+	<select class ="custom" name="Day">
+  		<option value="0" selected="selected"> Both Days</option>
+  		<option value="1">Day 1</option>
+  		<option value="2">Day 2</option>
+	</select>
+	<br>
+
+	<select class = 'custom' name="Period">
+		<option value="0" selected="selected"> All </option> 
+  		<option value="1">00:00 - 05:59</option>
+  		<option value="2">06:00 - 11:59 </option>
+  		<option value="3">12:00 - 17:59</option>
+  		<option value="4">18:00 - 23:59</option>
+	</select>
+	<br>
+	<input class="result" type="submit" value="Result">
+	</form>
+</div>	
+</body>
