@@ -1,0 +1,69 @@
+<HTML>
+
+<title> Results </title>
+<style>
+.para {
+  background-color: #99bbff	;
+  height: 40px;
+  text-align: center;
+  padding: 50px;
+  border: 5px solid black;
+  font-family: Veranda;
+}
+
+.title
+{
+	height: 30px
+	background-color: #99bbff ;
+	text-align: center;
+}
+
+.normal
+{
+	height: 30px;
+	text-align: center;
+}
+
+
+</style>
+<BODY>
+<div class ="para">
+<h1> Results </h1>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table align= "center" border="1">
+  <tr class = "title">
+    <th>Predicted Fradulent Transactions</th>
+    <th>Actual Fradulent Fransactions</th>
+    <th>Predicted Genuine Transation</th>
+    <th>Actual Genuine Transactions</th>
+    <th>F1-Score</th>
+    <th>Recall Score</th>
+    <th>Accuracy</th>
+    <th>P-Score</th>
+
+  </tr>
+  <tr class = "normal">
+    <td>{% print(predicted_one) %}</td>
+  	<td>{% print(actual_one) %}</td>
+  	<td>{% print(predicted_zero) %}</td>
+  	<td>{% print(actual_zero) %}</td>
+  	<td>{% print(f1Score) %}</td>
+  	<td>{% print(recallScore) %}</td>
+  	<td>{% print(accuracy) %}</td>
+  	<td>{% print(pScore) %}</td>
+
+  </tr>
+
+</table>
+
+</BODY>
+
+</HTML>
